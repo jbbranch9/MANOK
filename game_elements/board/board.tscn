@@ -1,0 +1,184 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://game_elements/board/board.gd" type="Script" id=1]
+[ext_resource path="res://game_elements/board/tile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game_elements/board/hex_grid.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game_elements/board/jump_zone.tscn" type="PackedScene" id=4]
+
+[node name="board" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="hex_grid" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, -0.714286 )
+
+[node name="jump_zones" type="Node2D" parent="."]
+
+[node name="NNW" parent="jump_zones" instance=ExtResource( 4 )]
+
+[node name="N" parent="jump_zones" instance=ExtResource( 4 )]
+
+[node name="NNE" parent="jump_zones" instance=ExtResource( 4 )]
+
+[node name="W" parent="jump_zones" instance=ExtResource( 4 )]
+
+[node name="NW" parent="jump_zones" instance=ExtResource( 4 )]
+
+[node name="NE" parent="jump_zones" instance=ExtResource( 4 )]
+
+[node name="E" parent="jump_zones" instance=ExtResource( 4 )]
+
+[node name="SW" parent="jump_zones" instance=ExtResource( 4 )]
+
+[node name="S" parent="jump_zones" instance=ExtResource( 4 )]
+
+[node name="SE" parent="jump_zones" instance=ExtResource( 4 )]
+
+[node name="SSW" parent="jump_zones" instance=ExtResource( 4 )]
+
+[node name="SSE" parent="jump_zones" instance=ExtResource( 4 )]
+
+[node name="tiles" type="Node2D" parent="."]
+
+[node name="D9" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 126.002, 31.497 )
+
+[node name="F9" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 189.641, 31.6478 )
+
+[node name="H9" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 254.058, 31.3098 )
+
+[node name="J9" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 317.965, 31.6995 )
+
+[node name="L9" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 381.693, 31.532 )
+
+[node name="N9" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 445.796, 31.2024 )
+
+[node name="C8" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 93.7249, 86.5277 )
+
+[node name="G8" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 222.336, 86.7771 )
+
+[node name="K8" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 349.894, 86.5164 )
+
+[node name="O8" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 477.672, 86.0284 )
+
+[node name="B7" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 61.6033, 141.584 )
+
+[node name="D7" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 126.192, 141.737 )
+
+[node name="F7" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 189.843, 141.683 )
+
+[node name="H7" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 253.673, 141.712 )
+
+[node name="J7" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 318.083, 141.649 )
+
+[node name="L7" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 382.191, 141.711 )
+
+[node name="N7" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 445.965, 141.54 )
+
+[node name="P7" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 510.221, 141.091 )
+
+[node name="A6" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 30.1216, 196.872 )
+
+[node name="E6" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 158.027, 196.293 )
+
+[node name="I6" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 285.905, 196.59 )
+
+[node name="M6" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 413.761, 195.974 )
+
+[node name="Q6" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 541.599, 196.271 )
+
+[node name="B5" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 61.9618, 251.22 )
+
+[node name="D5" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 125.97, 251.007 )
+
+[node name="F5" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 190.348, 251.443 )
+
+[node name="H5" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 254.057, 251.858 )
+
+[node name="J5" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 317.641, 251.806 )
+
+[node name="L5" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 382.038, 251.555 )
+
+[node name="N5" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 445.735, 251.432 )
+
+[node name="P5" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 510.099, 251.186 )
+
+[node name="C4" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 93.8869, 306.491 )
+
+[node name="G4" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 221.783, 305.95 )
+
+[node name="K4" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 349.504, 306.014 )
+
+[node name="O4" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 477.976, 306.783 )
+
+[node name="D3" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 125.959, 360.864 )
+
+[node name="F3" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 190.067, 361.237 )
+
+[node name="H3" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 254.121, 361.023 )
+
+[node name="J3" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 317.503, 360.937 )
+
+[node name="L3" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 381.978, 361.385 )
+
+[node name="N3" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 445.817, 361.492 )
+
+[node name="E2" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 157.498, 416.398 )
+
+[node name="I2" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 285.546, 416.234 )
+
+[node name="M2" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 413.868, 416.797 )
+
+[node name="F1" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 190.271, 471.668 )
+
+[node name="H1" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 254.309, 470.77 )
+
+[node name="J1" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 318.106, 471.113 )
+
+[node name="L1" parent="tiles" instance=ExtResource( 2 )]
+position = Vector2( 381.828, 471.329 )

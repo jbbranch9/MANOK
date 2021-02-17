@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://GUI/menus/start.gd" type="Script" id=1]
+[ext_resource path="res://GUI/font_main.tres" type="DynamicFont" id=2]
+[ext_resource path="res://GUI/cursor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GUI/menu_label.tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://ASSETS/gui/fonts/Retron2000.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = SubResource( 1 )
+
+[node name="start" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="ColorRect" parent="."]
+margin_left = -37.7979
+margin_top = -28.041
+margin_right = 839.202
+margin_bottom = 764.959
+color = Color( 0.25098, 0.141176, 0.101961, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="frame" type="VBoxContainer" parent="."]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 750.0
+margin_bottom = 660.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="RichTextLabel" parent="frame"]
+margin_right = 700.0
+margin_bottom = 188.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.45
+custom_fonts/normal_font = ExtResource( 2 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+bbcode_enabled = true
+bbcode_text = "title"
+text = "title"
+
+[node name="menu" type="VBoxContainer" parent="frame"]
+margin_top = 192.0
+margin_right = 700.0
+margin_bottom = 610.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="New Game" parent="frame/menu" instance=ExtResource( 4 )]
+custom_fonts/normal_font = SubResource( 2 )
+
+[node name="Load Game" parent="frame/menu" instance=ExtResource( 4 )]
+margin_top = 84.0
+margin_bottom = 164.0
+custom_fonts/normal_font = SubResource( 2 )
+
+[node name="Settings" parent="frame/menu" instance=ExtResource( 4 )]
+margin_top = 168.0
+margin_bottom = 249.0
+custom_fonts/normal_font = SubResource( 2 )
+
+[node name="Credits" parent="frame/menu" instance=ExtResource( 4 )]
+margin_top = 253.0
+margin_bottom = 333.0
+custom_fonts/normal_font = SubResource( 2 )
+
+[node name="Quit" parent="frame/menu" instance=ExtResource( 4 )]
+margin_top = 337.0
+margin_bottom = 418.0
+custom_fonts/normal_font = SubResource( 2 )
+
+[node name="cursor" parent="." instance=ExtResource( 3 )]

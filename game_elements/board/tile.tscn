@@ -1,0 +1,62 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://game_elements/board/tile.gd" type="Script" id=1]
+[ext_resource path="res://ASSETS/NULL.png" type="Texture" id=2]
+[ext_resource path="res://ASSETS/board/flare/08.png" type="Texture" id=3]
+[ext_resource path="res://ASSETS/board/flare/09.png" type="Texture" id=4]
+[ext_resource path="res://ASSETS/board/flare/03.png" type="Texture" id=5]
+[ext_resource path="res://ASSETS/board/flare/06.png" type="Texture" id=6]
+[ext_resource path="res://ASSETS/board/flare/02.png" type="Texture" id=7]
+[ext_resource path="res://ASSETS/board/flare/04.png" type="Texture" id=8]
+[ext_resource path="res://ASSETS/board/flare/05.png" type="Texture" id=9]
+[ext_resource path="res://ASSETS/board/flare/10.png" type="Texture" id=10]
+[ext_resource path="res://ASSETS/board/flare/01.png" type="Texture" id=11]
+[ext_resource path="res://ASSETS/board/flare/00.png" type="Texture" id=12]
+[ext_resource path="res://ASSETS/board/flare/07.png" type="Texture" id=13]
+[ext_resource path="res://ASSETS/gui/crosshair.png" type="Texture" id=14]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "solid",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 10 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "flare",
+"speed": 10.0
+} ]
+
+[node name="tile" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="hex" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hex"]
+modulate = Color( 1, 0, 0, 1 )
+polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+
+[node name="highlight" type="AnimatedSprite" parent="."]
+rotation = 1.5708
+frames = SubResource( 1 )
+animation = "flare"
+frame = 21
+playing = true
+
+[node name="crosshair" type="Sprite" parent="."]
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 14 )
+
+[node name="debug_label" type="Label" parent="." groups=[
+"debug_labels",
+]]
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="mouse_entered" from="hex" to="." method="_on_hover"]
+[connection signal="mouse_exited" from="hex" to="." method="_on_hover_exited"]

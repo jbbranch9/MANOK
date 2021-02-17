@@ -1,0 +1,137 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://GUI/menu_label.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GUI/menu_label.gd" type="Script" id=2]
+[ext_resource path="res://GUI/font_main.tres" type="DynamicFont" id=3]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://ASSETS/gui/fonts/Retron2000.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = SubResource( 1 )
+
+[node name="frame" type="VBoxContainer"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 750.0
+margin_bottom = 660.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="RichTextLabel" parent="."]
+margin_right = 700.0
+margin_bottom = 188.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.45
+custom_fonts/normal_font = ExtResource( 3 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+bbcode_enabled = true
+bbcode_text = "title"
+text = "title"
+
+[node name="menu" type="VBoxContainer" parent="."]
+margin_top = 192.0
+margin_right = 700.0
+margin_bottom = 610.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="New Game" type="RichTextLabel" parent="menu" instance=ExtResource( 1 )]
+margin_right = 700.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = SubResource( 2 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+bbcode_enabled = true
+bbcode_text = "[center]menu_label[/center]"
+text = "menu_label"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Load Game" type="RichTextLabel" parent="menu" instance=ExtResource( 1 )]
+margin_top = 84.0
+margin_right = 700.0
+margin_bottom = 164.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = SubResource( 2 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+bbcode_enabled = true
+bbcode_text = "[center]menu_label[/center]"
+text = "menu_label"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="RichTextLabel" parent="menu" instance=ExtResource( 1 )]
+margin_top = 168.0
+margin_right = 700.0
+margin_bottom = 249.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = SubResource( 2 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+bbcode_enabled = true
+bbcode_text = "[center]menu_label[/center]"
+text = "menu_label"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="RichTextLabel" parent="menu" instance=ExtResource( 1 )]
+margin_top = 253.0
+margin_right = 700.0
+margin_bottom = 333.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = SubResource( 2 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+bbcode_enabled = true
+bbcode_text = "[center]menu_label[/center]"
+text = "menu_label"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="RichTextLabel" parent="menu" instance=ExtResource( 1 )]
+margin_top = 337.0
+margin_right = 700.0
+margin_bottom = 418.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = SubResource( 2 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+bbcode_enabled = true
+bbcode_text = "[center]menu_label[/center]"
+text = "menu_label"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="mouse_entered" from="menu/New Game" to="menu/New Game" method="_on_hover"]
+[connection signal="mouse_exited" from="menu/New Game" to="menu/New Game" method="_on_hover_exited"]
+[connection signal="mouse_entered" from="menu/Load Game" to="menu/Load Game" method="_on_hover"]
+[connection signal="mouse_exited" from="menu/Load Game" to="menu/Load Game" method="_on_hover_exited"]
+[connection signal="mouse_entered" from="menu/Settings" to="menu/Settings" method="_on_hover"]
+[connection signal="mouse_exited" from="menu/Settings" to="menu/Settings" method="_on_hover_exited"]
+[connection signal="mouse_entered" from="menu/Credits" to="menu/Credits" method="_on_hover"]
+[connection signal="mouse_exited" from="menu/Credits" to="menu/Credits" method="_on_hover_exited"]
+[connection signal="mouse_entered" from="menu/Quit" to="menu/Quit" method="_on_hover"]
+[connection signal="mouse_exited" from="menu/Quit" to="menu/Quit" method="_on_hover_exited"]

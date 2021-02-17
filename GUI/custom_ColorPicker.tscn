@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://GUI/custom_ColorPicker.gd" type="Script" id=1]
+
+[node name="custom_ColorPicker" type="ColorPicker"]
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 344.0
+margin_bottom = 498.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

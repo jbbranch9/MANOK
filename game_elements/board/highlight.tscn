@@ -1,0 +1,37 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://GUI/highlight.gd" type="Script" id=1]
+[ext_resource path="res://ASSETS/NULL.png" type="Texture" id=2]
+[ext_resource path="res://ASSETS/board/flare/08.png" type="Texture" id=3]
+[ext_resource path="res://ASSETS/board/flare/09.png" type="Texture" id=4]
+[ext_resource path="res://ASSETS/board/flare/03.png" type="Texture" id=5]
+[ext_resource path="res://ASSETS/board/flare/06.png" type="Texture" id=6]
+[ext_resource path="res://ASSETS/board/flare/02.png" type="Texture" id=7]
+[ext_resource path="res://ASSETS/board/flare/04.png" type="Texture" id=8]
+[ext_resource path="res://ASSETS/board/flare/05.png" type="Texture" id=9]
+[ext_resource path="res://ASSETS/board/flare/10.png" type="Texture" id=10]
+[ext_resource path="res://ASSETS/board/flare/01.png" type="Texture" id=11]
+[ext_resource path="res://ASSETS/board/flare/00.png" type="Texture" id=12]
+[ext_resource path="res://ASSETS/board/flare/07.png" type="Texture" id=13]
+
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 10 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "flare",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "solid",
+"speed": 5.0
+} ]
+
+[node name="highlight" type="AnimatedSprite"]
+position = Vector2( 131.945, 120.999 )
+rotation = 1.5708
+scale = Vector2( 1.4, 1.4 )
+frames = SubResource( 1 )
+animation = "solid"
+script = ExtResource( 1 )
