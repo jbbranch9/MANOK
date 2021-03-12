@@ -40,7 +40,7 @@ func _on_hover():
 	
 	is_focus = true
 
-	print(start_menu.targets[name])
+	#print(start_menu.targets[name])
 	
 
 func _on_hover_exited():

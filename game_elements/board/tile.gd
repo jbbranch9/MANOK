@@ -74,7 +74,7 @@ func unhighlight(tile: hex_tile):
 
 func select():
 	
-	print("selected: ", self.name)
+	#print("selected: ", self.name)
 	
 	is_selected = true
 	highlight_flare(self)
@@ -93,7 +93,7 @@ func select():
 
 func deselect():
 	
-	print("deselected")
+	#print("deselected")
 	
 	is_selected = false
 	highlight.stop()
@@ -119,7 +119,7 @@ func _on_hover():
 	if not is_selected:
 		highlight_hover(self)
 
-	print(self.position, ' tile: ', self.name, ' slides to: ', slideable_tiles, ' jumps to: ', jumpable_tiles)
+	#print(self.position, ' tile: ', self.name, ' slides to: ', slideable_tiles, ' jumps to: ', jumpable_tiles)
 	
 	var path = "tiles/" + self.name
 

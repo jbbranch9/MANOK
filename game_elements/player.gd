@@ -40,7 +40,7 @@ func setup_stars(board):
 		
 
 	var tile_positions = board.get_tile_positions()
-	print(tile_positions)
+	#print(tile_positions)
 		
 	
 	for i in configuration.size():

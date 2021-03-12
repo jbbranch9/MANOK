@@ -43,6 +43,4 @@ func _on_ColorPicker_color_changed(color):
 	star_color = $custom_ColorPicker.color
 	recolor_sample_stars(star_color)
 
-func _process(delta):
-	
-	print($name_entry.text)
+

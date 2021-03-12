@@ -41,7 +41,7 @@ polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 rotation = 1.5708
 frames = SubResource( 1 )
 animation = "flare"
-frame = 21
+frame = 23
 playing = true
 
 [node name="crosshair" type="Sprite" parent="."]

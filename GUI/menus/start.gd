@@ -12,9 +12,9 @@ const targets = {\
 
 
 func _ready():
-	$background.color = palette["outer"]
-	$frame/title.set("custom_colors/default_color", palette["block"])
-	$frame/title.set("custom_colors/font_color_shadow", palette["negative"])
+	$background.color = palette["negative"]
+	$frame/title.set("custom_colors/default_color", palette["outer"])
+	$frame/title.set("custom_colors/font_color_shadow", palette["block"])
 	$frame/title.set("bbcode_enabled", true)
 	$frame/title.set("bbcode_text", "[center]HEXI[/center]")
 

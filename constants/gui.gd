@@ -6,11 +6,11 @@ extends Node2D
 const palette = {\
 
 #board
-"outer":Color("BF9A54"), \
-"mid":Color("F7F3e3"), \
-"inner":Color("83A1C2"), \
-"block":Color("872d23"), \
-"negative":Color("40241A"), \
+"outer":Color("eec33d"), \
+"mid":Color("F7F4A1"), \
+"inner":Color("ea9d3e"), \
+"block":Color("B93C20"), \
+"negative":Color("1C0D0C"), \
 
 #tiles
 "cursor":Color.skyblue, \
