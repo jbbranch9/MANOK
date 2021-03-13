@@ -55,15 +55,19 @@ onready var all_tiles = $tiles.get_children()
 
 onready var game = self.get_parent()
 
-# returns object reference based on name
-func get_tile_by_name(tile_name:String):
-	return $tiles.get_node(tile_name)
-
-#func _process(delta):
-#	print($tiles/A6/hex.overlaps_area($jump_zones/W/radius))
+var lower_right_bound: Vector2
+var centerpoint: Vector2
 
 func _ready():
 	center_jump_zones()
+	
+	#defines the outer extremities and centerpoint of the 'bounding box' around the tiles
+	var rightmost = $tiles/Q6
+	var bottommost = $tiles/L1
+	lower_right_bound = Vector2(rightmost.position.x + rightmost.WIDTH/2, bottommost.position.y + bottommost.WIDTH/2)
+	centerpoint = lower_right_bound / 2
+	
+
 
 # returns a dictionary of tiles' Vector2 coordinates, searchable by their names
 func get_tile_positions():
@@ -94,4 +98,9 @@ func center_between(A, B, C):
 	var dir = pt_A.direction_to(pt_B)
 	C.position = pt_A + (delta * dir)
 
-	
+
+# returns object reference based on name
+func get_tile_by_name(tile_name:String):
+	return $tiles.get_node(tile_name)
+
+

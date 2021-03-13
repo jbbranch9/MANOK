@@ -8,6 +8,7 @@ var number_of_players: int = 3
 
 func _ready():
 	set_up_player()
+	$board.position = (get_viewport_rect().size / 2) - $board.centerpoint
 
 func _input(event):
 	#if a tile is hovered over, and clicked on:

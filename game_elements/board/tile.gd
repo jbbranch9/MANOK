@@ -3,7 +3,8 @@ extends Node2D
 class_name hex_tile
 
 const SIDE = 32
-const HEIGHT = SIDE * sqrt(3)
+const WIDTH = SIDE * sqrt(3)
+const HEIGHT = SIDE * 2
 
 const palette: Dictionary = GUI.palette
 
@@ -29,11 +30,11 @@ func get_polygon():
 
 func _ready():
 	#defines points of hex-shaped collision polygon
-	var p1 = Vector2(-.5 * SIDE, -.5 * HEIGHT)
-	var p2 = Vector2(.5 * SIDE, -.5 * HEIGHT)
+	var p1 = Vector2(-.5 * SIDE, -.5 * WIDTH)
+	var p2 = Vector2(.5 * SIDE, -.5 * WIDTH)
 	var p3 = Vector2(SIDE, 0)
-	var p4 = Vector2(.5 * SIDE, .5 * HEIGHT)
-	var p5 = Vector2(-.5 * SIDE, .5 * HEIGHT)
+	var p4 = Vector2(.5 * SIDE, .5 * WIDTH)
+	var p5 = Vector2(-.5 * SIDE, .5 * WIDTH)
 	var p6 = Vector2(-1 * SIDE, 0)
 	var poly = $hex/CollisionPolygon2D
 	poly.polygon = PoolVector2Array([p1, p2, p3, p4, p5, p6])
@@ -45,6 +46,8 @@ func _ready():
 
 	$debug_label.text = self.name
 	#$debug_label.set("custom_fonts/font", GUI.font_main)
+	
+	
 	
 	
 func highlight_flare(tile: hex_tile):
