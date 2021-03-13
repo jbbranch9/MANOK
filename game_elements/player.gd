@@ -25,26 +25,29 @@ func set_piece_type(player_color: Color, piece_shape: int):
 		carrier.set_color(player_color)
 
 
-func _ready():
-	pass
-		
-	
 
 
 func setup_stars(board):
+	
 	var configuration:Array
 	if game.number_of_players == 2:
 		configuration = Zones.CONFIGURATIONS["_2_PLAYER"][player_index]
 	elif game.number_of_players == 3:
 		configuration = Zones.CONFIGURATIONS["_3_PLAYER"][player_index]
-		
+		#3 player games need fewer pieces
+		remove_spares()
 
 	var tile_positions = board.get_tile_positions()
-	#print(tile_positions)
-		
-	
+
 	for i in configuration.size():
 		var tile = configuration[i]
 		var star = self.stars[i]
 		#print(tile, star, i)
 		star.position = tile_positions[tile]
+
+#deletes last four stars and one carrier
+func remove_spares():
+	var last_four = [$stars/S09, $stars/S10, $stars/S11, $stars/S12]
+	for star in last_four:
+		star.queue_free()
+	$carriers/C3.queue_free()

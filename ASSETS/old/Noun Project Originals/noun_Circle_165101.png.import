@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/7.png-58f15419a251796db4d24aaf94633984.stex"
+path="res://.import/noun_Circle_165101.png-db8779b0a65f0f70a8c02063f19f1096.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/pieces/new_stars/7.png"
-dest_files=[ "res://.import/7.png-58f15419a251796db4d24aaf94633984.stex" ]
+source_file="res://ASSETS/old/Noun Project Originals/noun_Circle_165101.png"
+dest_files=[ "res://.import/noun_Circle_165101.png-db8779b0a65f0f70a8c02063f19f1096.stex" ]
 
 [params]
 
