@@ -11,6 +11,7 @@ script = ExtResource( 5 )
 [node name="board" parent="." instance=ExtResource( 3 )]
 
 [node name="players" type="Node2D" parent="."]
+visible = false
 
 [node name="A" parent="players" instance=ExtResource( 2 )]
 

@@ -41,7 +41,7 @@ polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 rotation = 1.5708
 frames = SubResource( 1 )
 animation = "flare"
-frame = 23
+frame = 21
 playing = true
 
 [node name="crosshair" type="Sprite" parent="."]
@@ -52,6 +52,7 @@ texture = ExtResource( 14 )
 [node name="debug_label" type="Label" parent="." groups=[
 "debug_labels",
 ]]
+visible = false
 modulate = Color( 0, 0, 0, 1 )
 margin_right = 40.0
 margin_bottom = 14.0
