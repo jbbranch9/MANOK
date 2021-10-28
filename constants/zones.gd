@@ -129,7 +129,13 @@ func get_jumpables(tile_name:String):
 		var index = jumpables.find(tile_name)
 		jumpables.remove(index)
 	return jumpables
-
-func _ready():
-	pass
-		
+	
+func get_zone(tile_name:String):
+	var zone
+	if tile_name in OUTER:
+		zone = "outer"
+	elif tile_name in MID:
+		zone = "mid"
+	elif tile_name in INNER:
+		zone = "inner"
+	return zone
