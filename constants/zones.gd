@@ -139,4 +139,7 @@ func get_zone(tile_name:String):
 		zone = "mid"
 	elif tile_name in INNER:
 		zone = "inner"
+	elif tile_name.begins_with('stage'):
+		zone = 'stage'
+	
 	return zone

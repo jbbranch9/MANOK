@@ -8,6 +8,7 @@ const PALETTE = {\
 	"inner":Color("83A1C2"), \
 	"block":Color("872d23"), \
 	"negative":Color("40241A"), \
+	"stage": Color.gray, \
 	},
 
 "tiles":{\

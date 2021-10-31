@@ -52,6 +52,10 @@ func highlight():
 	var jumps = Zones.get_jumpables(selection.tile_name)
 	
 	print(selection)
+	print(slides)
+	print(jumps)
+	print(selection.has())
+	
 	
 	var all = slides + jumps
 
@@ -103,6 +107,6 @@ func select(tile):
 	
 	highlight()
 	
-	print(selection.has())
+
 	
 
