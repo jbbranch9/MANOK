@@ -52,14 +52,14 @@ visible = false
 [node name="flare" type="AnimatedSprite" parent="flare"]
 frames = SubResource( 5 )
 animation = "flare"
-frame = 7
+frame = 8
 playing = true
 
 [node name="flare2" type="AnimatedSprite" parent="flare"]
 scale = Vector2( 1.1, 1.1 )
 frames = SubResource( 5 )
 animation = "flare"
-frame = 7
+frame = 8
 playing = true
 
 [node name="pawn" parent="." instance=ExtResource( 4 )]

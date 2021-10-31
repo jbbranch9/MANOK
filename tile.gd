@@ -51,3 +51,6 @@ func remove(piece_type):
 	var piece = pieces[piece_type]
 	piece.modulate = '#FFFFFF'
 	piece.visible = false
+
+func _to_string():
+	return tile_name

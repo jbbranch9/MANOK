@@ -13,7 +13,27 @@ func _process(delta):
 
 func _ready():
 	connect_signals()
+	
+	setup_pieces(2)
 
+
+func setup_pieces(player_count: int):
+	var config = Zones.CONFIGURATIONS['_'+str(player_count)+'_PLAYER']
+	var p1_color = Globals.PALETTE['player_colors']['A']
+	var p2_color = Globals.PALETTE['player_colors']['B']
+	var p3_color = Globals.PALETTE['player_colors']['C']
+	
+	var colors = [p1_color, p2_color]
+	if player_count == 3:
+		colors.append(p3_color)
+	
+
+	for player_config in config:
+		var player_ix = config.find(player_config)
+		var player_color = colors[player_ix]
+		for tile_location in player_config:
+			var tile = get_tile(tile_location)
+			tile.place('pawn', player_color)
 
 func connect_signals():
 	for t in tiles:
@@ -23,12 +43,8 @@ func change_cursor_focus(new_focus):
 	cursor_focus = new_focus
 
 #searches the 'tiles' array and returns the named tile
-func get_tile(name):
-	var tile = null
-	for t in tiles:
-		if t.tile_name == name:
-			tile = t
-	return tile
+func get_tile(tile_ID):
+	return $board.get_tile(tile_ID)
 
 func highlight():
 
