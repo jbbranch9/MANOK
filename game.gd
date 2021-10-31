@@ -14,7 +14,7 @@ func _process(delta):
 func _ready():
 	connect_signals()
 	
-	setup_pieces(2)
+	setup_pieces(3)
 
 
 func setup_pieces(player_count: int):
@@ -51,7 +51,7 @@ func highlight():
 	var slides = Zones.get_slideables(selection.tile_name)
 	var jumps = Zones.get_jumpables(selection.tile_name)
 	
-	print('slides: ', slides, '\njumps:  ', jumps)
+	print(selection)
 	
 	var all = slides + jumps
 
@@ -102,5 +102,7 @@ func select(tile):
 	selection.flare.visible = true
 	
 	highlight()
+	
+	print(selection.has())
 	
 
