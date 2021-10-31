@@ -34,6 +34,9 @@ func highlight():
 
 	var slides = Zones.get_slideables(selection.tile_name)
 	var jumps = Zones.get_jumpables(selection.tile_name)
+	
+	print('slides: ', slides, '\njumps:  ', jumps)
+	
 	var all = slides + jumps
 
 	for tile in all:

@@ -11,7 +11,8 @@ var zone #outer, inner, or mid
 
 onready var flare = $flare
 
-
+onready var pawn = $pawn
+onready var carrier = $carrier
 
 
 func _ready():
@@ -33,3 +34,20 @@ func colorize():
 func _on_mouse_over():
 	emit_signal("cursor_focus", self)
 
+func place(piece_type, player_color):
+	var pieces = {
+		'pawn': pawn,
+		'carrier': carrier,
+	}
+	var piece = pieces[piece_type]
+	piece.modulate = player_color
+	piece.visible = true
+
+func remove(piece_type):
+	var pieces = {
+		'pawn': pawn,
+		'carrier': carrier,
+	}
+	var piece = pieces[piece_type]
+	piece.modulate = '#FFFFFF'
+	piece.visible = false
