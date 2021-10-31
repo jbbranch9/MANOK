@@ -5,7 +5,7 @@ onready var cursor_focus = null
 onready var selection = null
 
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("select") and cursor_focus != null:
 		select(cursor_focus)
 		
