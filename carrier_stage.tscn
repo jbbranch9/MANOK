@@ -9,26 +9,38 @@ position = Vector2( 40, 40 )
 tile_name = "stage"
 
 [node name="flare" parent="stage1/flare" index="0"]
-frame = 9
+frame = 19
 
 [node name="flare2" parent="stage1/flare" index="1"]
-frame = 9
+frame = 19
 
-[node name="carrier" parent="stage1" index="4"]
+[node name="carrier" parent="stage1" index="3"]
 visible = true
 
 [node name="stage2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 100, 40 )
 tile_name = "stage"
 
-[node name="carrier" parent="stage2" index="4"]
+[node name="flare" parent="stage2/flare" index="0"]
+frame = 18
+
+[node name="flare2" parent="stage2/flare" index="1"]
+frame = 18
+
+[node name="carrier" parent="stage2" index="3"]
 visible = true
 
 [node name="stage3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 160, 40 )
 tile_name = "stage"
 
-[node name="carrier" parent="stage3" index="4"]
+[node name="flare" parent="stage3/flare" index="0"]
+frame = 17
+
+[node name="flare2" parent="stage3/flare" index="1"]
+frame = 17
+
+[node name="carrier" parent="stage3" index="3"]
 visible = true
 
 [editable path="stage1"]

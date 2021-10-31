@@ -1,6 +1,6 @@
 extends Node2D
 
-signal cursor_focus(tile)
+signal clicked(tile)
 
 export var tile_name:String
 
@@ -29,10 +29,7 @@ func colorize():
 	var tile_color = Globals.PALETTE["board"][zone]
 	$Sprite.modulate = tile_color
 	$flare.modulate = tile_color
-	
 
-func _on_mouse_over():
-	emit_signal("cursor_focus", self)
 
 func has():
 	var has_pawn = pawn.visible == true
@@ -80,3 +77,8 @@ func remove(piece_type):
 
 func _to_string():
 	return tile_name
+
+
+func _on_tile_input_event(viewport, event, shape_idx):
+	if event.as_text().begins_with("InputEventMouseButton"):
+		emit_signal("clicked", self)

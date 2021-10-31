@@ -6,8 +6,7 @@ onready var selection = null
 
 
 func _process(_delta):
-	if Input.is_action_just_pressed("select") and cursor_focus != null:
-		select(cursor_focus)
+	pass
 		
 
 
@@ -37,10 +36,10 @@ func setup_pieces(player_count: int):
 
 func connect_signals():
 	for t in tiles:
-		t.connect("cursor_focus", self, "change_cursor_focus")
+		t.connect("clicked", self, "tile_clicked")
 
-func change_cursor_focus(new_focus):
-	cursor_focus = new_focus
+func tile_clicked(tile):
+	select(tile)
 
 #searches the 'tiles' array and returns the named tile
 func get_tile(tile_ID):
