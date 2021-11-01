@@ -80,5 +80,5 @@ func _to_string():
 
 
 func _on_tile_input_event(viewport, event, shape_idx):
-	if event.as_text().begins_with("InputEventMouseButton"):
+	if Input.is_action_just_pressed("select"):
 		emit_signal("clicked", self)
