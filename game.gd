@@ -5,15 +5,14 @@ onready var cursor_focus = null
 onready var selection = null
 
 
-func _process(_delta):
-	pass
-		
 
 
 func _ready():
 	connect_signals()
 	
 	setup_pieces(3)
+	
+	$carrier_stage.colorize(Globals.PALETTE["player_colors"]["A"])
 
 
 func setup_pieces(player_count: int):
@@ -35,8 +34,13 @@ func setup_pieces(player_count: int):
 			tile.place('pawn', player_color)
 
 func connect_signals():
+	$carrier_stage.connect("carrier_pickup", self, "carrier_pickup")
 	for t in tiles:
 		t.connect("clicked", self, "tile_clicked")
+
+func carrier_pickup():
+	if $cursor.has_carrier == false:
+		$cursor.toggle_carrier()
 
 func tile_clicked(tile):
 	select(tile)
@@ -94,12 +98,24 @@ func select(tile):
 		#unhighlight ALL tiles
 		unhighlight()
 		
-		#[IF there is already a selection] AND it matches the tile that was just clicked 
+		#IF there is already a selection AND it matches the tile that was just clicked 
 		if selection == tile:
 			#THEN 'deselect' that tile (set selection to null)
 			selection = null
 			#and then exit the function
 			return
+		#IF there is already a selection AND it DOES NOT match the tile that was just clicked 
+		else:
+			var slides = Zones.get_slideables(selection.tile_name)
+			var jumps = Zones.get_jumpables(selection.tile_name)
+			if str(tile) in slides or str(tile) in jumps:
+				if $cursor.has_carrier:
+					tile.place('carrier')
+					$cursor.toggle_carrier()
+					#THEN 'deselect' that tile (set selection to null)
+					selection = null
+					#and then exit the function
+					return
 
 	selection = tile
 	selection.flare.visible = true

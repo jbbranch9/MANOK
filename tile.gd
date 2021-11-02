@@ -57,7 +57,7 @@ func has():
 	return output
 
 
-func place(piece_type, player_color):
+func place(piece_type, player_color='#FFFFFF'):
 	var pieces = {
 		'pawn': pawn,
 		'carrier': carrier,

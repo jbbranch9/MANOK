@@ -4,6 +4,7 @@
 [ext_resource path="res://ASSETS/pieces/carrier.png" type="Texture" id=2]
 
 [node name="carrier" type="Node2D"]
+modulate = Color( 0.588235, 0.588235, 0.588235, 1 )
 
 [node name="cover" type="Sprite" parent="."]
 texture = ExtResource( 1 )
