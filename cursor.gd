@@ -1,6 +1,7 @@
 extends Node2D
 
 onready var has_carrier = false
+onready var new_carrier = false
 
 func toggle_carrier():
 	has_carrier = not has_carrier

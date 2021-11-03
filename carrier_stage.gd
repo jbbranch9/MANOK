@@ -1,6 +1,6 @@
 extends Node2D
 
-signal carrier_pickup
+signal carrier_pickup(just_activated)
 
 onready var sprites = [$Sprite_1, $Sprite_2, $Sprite_3]
 
@@ -15,7 +15,7 @@ func colorize(color: Color):
 func _on_Button_pressed():
 	if carrier_count > 0:
 		carrier_count -= 1
-		emit_signal("carrier_pickup")
+		emit_signal("carrier_pickup", true)
 		sprites[carrier_count].visible = false
 		if carrier_count == 2:
 			btn.rect_size = Vector2(128, 64)

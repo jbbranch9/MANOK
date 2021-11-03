@@ -4,7 +4,8 @@ onready var tiles = $board/tiles.get_children()
 onready var cursor_focus = null
 onready var selection = null
 
-
+func _process(delta):
+	print($cursor.has_carrier, $cursor.new_carrier)
 
 
 func _ready():
@@ -38,12 +39,26 @@ func connect_signals():
 	for t in tiles:
 		t.connect("clicked", self, "tile_clicked")
 
-func carrier_pickup():
+func carrier_pickup(just_activated):
 	if $cursor.has_carrier == false:
 		$cursor.toggle_carrier()
+	$cursor.new_carrier = just_activated
+
 
 func tile_clicked(tile):
-	select(tile)
+	if $cursor.has_carrier and not tile.has()["carrier"]:
+		tile.place('carrier', Color("#444444"))
+		$cursor.toggle_carrier()
+		#THEN 'deselect' that tile (set selection to null)
+		selection = null
+		#and then exit the function
+		return
+	elif not $cursor.has_carrier and tile.has()["carrier"]:
+		carrier_pickup(false)
+		tile.remove("carrier")
+		select(tile)
+	else:
+		select(tile)
 
 #searches the 'tiles' array and returns the named tile
 func get_tile(tile_ID):
@@ -108,14 +123,7 @@ func select(tile):
 		else:
 			var slides = Zones.get_slideables(selection.tile_name)
 			var jumps = Zones.get_jumpables(selection.tile_name)
-			if str(tile) in slides or str(tile) in jumps:
-				if $cursor.has_carrier:
-					tile.place('carrier')
-					$cursor.toggle_carrier()
-					#THEN 'deselect' that tile (set selection to null)
-					selection = null
-					#and then exit the function
-					return
+
 
 	selection = tile
 	selection.flare.visible = true
