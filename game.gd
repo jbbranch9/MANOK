@@ -4,8 +4,8 @@ onready var tiles = $board/tiles.get_children()
 onready var cursor_focus = null
 onready var selection = null
 
-func _process(delta):
-	print($cursor.has_carrier, $cursor.new_carrier)
+#func _process(delta):
+#	print(str(selection))
 
 
 func _ready():
@@ -43,16 +43,17 @@ func carrier_pickup(just_activated):
 	if $cursor.has_carrier == false:
 		$cursor.toggle_carrier()
 	$cursor.new_carrier = just_activated
+	if just_activated:
+		unhighlight()
 
 
 func tile_clicked(tile):
 	if $cursor.has_carrier and not tile.has()["carrier"]:
-		tile.place('carrier', Color("#444444"))
-		$cursor.toggle_carrier()
-		#THEN 'deselect' that tile (set selection to null)
-		selection = null
-		#and then exit the function
-		return
+		if $cursor.new_carrier and tile.zone == "outer" or selection != null and tile in selection.jumpables:
+			tile.place('carrier', Color("#444444"))
+			$cursor.toggle_carrier()
+			#THEN 'deselect' that tile (set selection to null)
+			selection = null
 	elif not $cursor.has_carrier and tile.has()["carrier"]:
 		carrier_pickup(false)
 		tile.remove("carrier")
@@ -64,16 +65,18 @@ func tile_clicked(tile):
 func get_tile(tile_ID):
 	return $board.get_tile(tile_ID)
 
+
+
 func highlight():
 
-	var slides = Zones.get_slideables(selection.tile_name)
+	var slides = selection.slideables
 	var jumps = Zones.get_jumpables(selection.tile_name)
 	
-	print(selection)
-	print(slides)
-	print(jumps)
-	print(selection.has())
-	
+#	print(selection)
+#	print(slides)
+#	print(jumps)
+#	print(selection.has())
+#
 	
 	var all = slides + jumps
 
@@ -95,6 +98,7 @@ func highlight():
 
 
 func unhighlight():
+	selection = null
 	
 	for tile in tiles:
 		#for each flare component
@@ -107,6 +111,9 @@ func unhighlight():
 
 func select(tile):
 
+	
+	print(str(selection)+str(tile))
+
 	#IF there is already a selection
 	if selection != null:
 
@@ -114,15 +121,16 @@ func select(tile):
 		unhighlight()
 		
 		#IF there is already a selection AND it matches the tile that was just clicked 
-		if selection == tile:
+		if str(selection) == str(tile):
 			#THEN 'deselect' that tile (set selection to null)
 			selection = null
 			#and then exit the function
 			return
 		#IF there is already a selection AND it DOES NOT match the tile that was just clicked 
 		else:
-			var slides = Zones.get_slideables(selection.tile_name)
-			var jumps = Zones.get_jumpables(selection.tile_name)
+			pass
+#			var slides = selection.slideables
+#			var jumps = selection.jumpables
 
 
 	selection = tile
