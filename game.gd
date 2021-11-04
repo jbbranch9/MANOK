@@ -1,7 +1,6 @@
 extends Node2D
 
 onready var tiles = $board/tiles.get_children()
-onready var cursor_focus = null
 onready var selection = null
 
 #func _process(delta):
@@ -13,7 +12,6 @@ func _ready():
 	
 	setup_pieces(3)
 	
-	$carrier_stage.colorize(Globals.PALETTE["player_colors"]["A"])
 
 
 func setup_pieces(player_count: int):
@@ -35,7 +33,7 @@ func setup_pieces(player_count: int):
 			tile.place('pawn', player_color)
 
 func connect_signals():
-	$carrier_stage.connect("carrier_pickup", self, "carrier_pickup")
+#	$carrier_stage.connect("carrier_pickup", self, "carrier_pickup")
 	for t in tiles:
 		t.connect("clicked", self, "tile_clicked")
 
@@ -48,18 +46,19 @@ func carrier_pickup(just_activated):
 
 
 func tile_clicked(tile):
-	if $cursor.has_carrier and not tile.has()["carrier"]:
-		if $cursor.new_carrier and tile.zone == "outer" or selection != null and tile in selection.jumpables:
-			tile.place('carrier', Color("#444444"))
-			$cursor.toggle_carrier()
-			#THEN 'deselect' that tile (set selection to null)
-			selection = null
-	elif not $cursor.has_carrier and tile.has()["carrier"]:
-		carrier_pickup(false)
-		tile.remove("carrier")
-		select(tile)
-	else:
-		select(tile)
+	if $cursor.mode == "select":
+		if selection == null:
+			select(tile)
+			$cursor.toggle_mode()
+		elif tile in selection.slides() or tile in selection.jumps():
+			print(str(selection)+">>"+str(tile))
+			deselect()
+			$cursor.mode = "select1"
+	elif $cursor.mode == "jump":
+		deselect()
+		$cursor.toggle_mode()
+		
+		
 
 #searches the 'tiles' array and returns the named tile
 func get_tile(tile_ID):
@@ -67,16 +66,11 @@ func get_tile(tile_ID):
 
 
 
+
 func highlight():
 
-	var slides = selection.slideables
-	var jumps = Zones.get_jumpables(selection.tile_name)
-	
-#	print(selection)
-#	print(slides)
-#	print(jumps)
-#	print(selection.has())
-#
+	var slides = selection.slides()
+	var jumps = selection.jumps()
 	
 	var all = slides + jumps
 
@@ -98,8 +92,6 @@ func highlight():
 
 
 func unhighlight():
-	selection = null
-	
 	for tile in tiles:
 		#for each flare component
 		for each_flare in tile.flare.get_children():
@@ -108,35 +100,17 @@ func unhighlight():
 		tile.colorize()
 		tile.flare.visible = false
 
+func deselect():
+	unhighlight()
+	selection = null
 
 func select(tile):
 
-	
-	print(str(selection)+str(tile))
-
-	#IF there is already a selection
-	if selection != null:
-
-		#unhighlight ALL tiles
-		unhighlight()
+	if $cursor.mode == "select":
+		selection = tile
+		selection.flare.visible = true
 		
-		#IF there is already a selection AND it matches the tile that was just clicked 
-		if str(selection) == str(tile):
-			#THEN 'deselect' that tile (set selection to null)
-			selection = null
-			#and then exit the function
-			return
-		#IF there is already a selection AND it DOES NOT match the tile that was just clicked 
-		else:
-			pass
-#			var slides = selection.slideables
-#			var jumps = selection.jumpables
-
-
-	selection = tile
-	selection.flare.visible = true
-	
-	highlight()
+		highlight()
 	
 
 	

@@ -5,8 +5,8 @@ signal clicked(tile)
 export var tile_name:String
 
 
-var jumpables #all tiles which can be jumped to from this tile
-var slideables #all tiles which can be slid to from this tile
+var jumpables 
+var slideables 
 var zone #outer, inner, or mid
 
 onready var flare = $flare
@@ -14,19 +14,24 @@ onready var flare = $flare
 onready var pawn = $pawn
 onready var carrier = $carrier
 
+#all tiles which can be jumped to from this tile
+func jumps():
+	return Zones.get_jumpables(tile_name)
+	
+#all tiles which can be slid to from this tile
+func slides():
+	return Zones.get_slideables(tile_name)
+	
+func zone():
+	return Zones.get_zone(tile_name)
 
 func _ready():
-
-	jumpables = Zones.get_jumpables(tile_name)
-	slideables = Zones.get_slideables(tile_name)
-	zone = Zones.get_zone(tile_name)
-	
 	colorize()
 
 
 #color according to zone
 func colorize():
-	var tile_color = Globals.PALETTE["board"][zone]
+	var tile_color = Globals.PALETTE["board"][zone()]
 	$Sprite.modulate = tile_color
 	$flare.modulate = tile_color
 

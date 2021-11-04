@@ -1,14 +1,16 @@
 extends Node2D
 
-onready var has_carrier = false
-onready var new_carrier = false
 
-func toggle_carrier():
-	has_carrier = not has_carrier
-	if has_carrier:
-		$carrier.visible = true
-	else:
-		$carrier.visible = false
+onready var mode = "select"
+
+func toggle_mode():
+	var next_mode = {
+		"select": "slide",
+		"slide": "jump",
+		"jump": "select",
+	}
+	mode = next_mode[mode]
 
 func _process(delta):
 	position = get_viewport().get_mouse_position()
+	print(mode)
