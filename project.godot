@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="HEXI"
+config/name="MANOK"
 run/main_scene="res://game.tscn"
 
 [autoload]

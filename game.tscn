@@ -13,6 +13,7 @@ position = Vector2( 10, 60 )
 scale = Vector2( 0.9, 0.9 )
 
 [node name="carrier_stage" parent="." instance=ExtResource( 3 )]
+visible = false
 scale = Vector2( 0.75, 0.75 )
 
 [node name="cursor" parent="." instance=ExtResource( 4 )]
