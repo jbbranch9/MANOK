@@ -1,6 +1,7 @@
 extends Node2D
 
-#jump zones
+# jump zone arrays
+# static sets of tile coordinates that share a jump zone
 const NNW = ['D9', 'F9', 'G8', 'F7', 'D7', 'C8']
 const N = ['H9', 'J9', 'K8', 'J7', 'H7', 'G8']
 const NNE = ['L9', 'N9', 'O8', 'N7', 'L7', 'K8']
@@ -14,7 +15,8 @@ const SE = ['L5', 'N5', 'O4', 'N3', 'L3', 'K4']
 const SSW = ['F3', 'H3', 'I2', 'H1', 'F1', 'E2']
 const SSE = ['J3', 'L3', 'M2', 'L1', 'J1', 'I2']
 
-#slideables
+# slideable arrays
+# static sets of tile coordinates that be slid to from the origin tile (the variable name)
 const D9 = ['F9', 'C8']
 const F9 = ['H9', 'G8', 'D9']
 const H9 = ['G8', 'F9']
@@ -76,6 +78,7 @@ D3, F3, H3, J3, L3, N3, \
 E2, I2, M2, \
 F1, H1, J1, L1]
 
+# static set of all tile coordinates
 const TILES = [
 	'D9', 'F9', 'H9', 'J9', 'L9', 'N9', \
 	'C8', 'G8', 'K8', 'O8', \
@@ -87,15 +90,16 @@ const TILES = [
 	'E2', 'I2', 'M2', \
 	'F1', 'H1', 'J1', 'L1']
 
+# defines tiles in each zone
 const OUTER = ['D9', 'F9', 'H9', 'J9', 'L9', 'N9', 'O8', 'P7', 'Q6', 'P5', 'O4', 'N3', 'M2', 'L1', 'J1', 'H1', 'F1', 'E2', 'D3', 'C4', 'B5', 'A6', 'B7', 'C8']
 const MID = ['G8', 'K8', 'N7', 'N5', 'L3', 'I2', 'F3', 'D5', 'D7', 'F7', 'H7', 'J7', 'L7', 'M6', 'L5', 'K4', 'J3', 'H3', 'G4', 'F5', 'E6']
 const INNER = ['I6', 'J5', 'H5']
 
-# init star placements for 2-player
+# init pawn placements for 2-player
 const PLAYER_A_of_2 = ['D9', 'H9', 'L9', 'O8', 'Q6', 'O4', 'M2', 'J1', 'F1', 'D3', 'B5', 'B7']
 const PLAYER_B_of_2 = ['F9', 'J9', 'N9', 'P7', 'P5', 'N3', 'L1', 'H1', 'E2', 'C4', 'A6', 'C8']
 
-# init star placements for 3-player
+# init pawn placements for 3-player
 const PLAYER_A_of_3 = ['D9', 'J9', 'O8', 'P5', 'M2', 'H1', 'D3', 'A6']
 const PLAYER_B_of_3 = ['C8', 'H9', 'N9', 'Q6', 'N3', 'J1', 'E2', 'B5']
 const PLAYER_C_of_3 = ['B7', 'F9', 'L9', 'P7', 'O4', 'L1', 'F1', 'C4']

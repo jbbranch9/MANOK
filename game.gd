@@ -3,14 +3,12 @@ extends Node2D
 onready var tiles = $board/tiles.get_children()
 onready var selection = null
 
-#func _process(delta):
-#	print(str(selection))
 
 
 func _ready():
 	connect_signals()
 	
-	setup_pieces(3)
+	setup_pieces(3) #set up a 3-player game
 	
 
 

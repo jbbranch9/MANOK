@@ -1,27 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://board.gd" type="Script" id=1]
 [ext_resource path="res://tile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ASSETS/ref.png" type="Texture" id=3]
 [ext_resource path="res://ASSETS/1280x1280_background.png" type="Texture" id=4]
+[ext_resource path="res://ASSETS/board/block.png" type="Texture" id=5]
 
 [node name="board" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="background" type="Sprite" parent="."]
 modulate = Color( 0.25098, 0.141176, 0.101961, 1 )
+position = Vector2( 0.793701, 0 )
 texture = ExtResource( 4 )
 offset = Vector2( 320, 320 )
-
-[node name="ref" type="Sprite" parent="."]
-visible = false
-position = Vector2( -5, 3 )
-scale = Vector2( 0.5, 0.52 )
-texture = ExtResource( 3 )
-centered = false
-__meta__ = {
-"_editor_description_": "	"
-}
 
 [node name="tiles" type="Node2D" parent="."]
 
@@ -264,3 +256,46 @@ tile_name = "J1"
 position = Vector2( 461.053, 542.105 )
 scale = Vector2( 1.1, 1.1 )
 tile_name = "L1"
+
+[node name="reference" type="Sprite" parent="."]
+visible = false
+position = Vector2( -4.40552, -7.61667 )
+scale = Vector2( 0.62, 0.6 )
+texture = ExtResource( 3 )
+centered = false
+__meta__ = {
+"_editor_description_": "	"
+}
+
+[node name="blocks" type="Node2D" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+
+[node name="Sprite" type="Sprite" parent="blocks"]
+position = Vector2( 344.211, 36.842 )
+rotation = 1.5708
+texture = ExtResource( 5 )
+
+[node name="Sprite2" type="Sprite" parent="blocks"]
+position = Vector2( 324.737, 257.895 )
+rotation = 0.523599
+texture = ExtResource( 5 )
+
+[node name="Sprite3" type="Sprite" parent="blocks"]
+position = Vector2( 558.421, 384.211 )
+rotation = 0.523599
+texture = ExtResource( 5 )
+
+[node name="Sprite4" type="Sprite" parent="blocks"]
+position = Vector2( 344.211, 289.474 )
+rotation = 1.5708
+texture = ExtResource( 5 )
+
+[node name="Sprite5" type="Sprite" parent="blocks"]
+position = Vector2( 363.685, 257.895 )
+rotation = -0.523599
+texture = ExtResource( 5 )
+
+[node name="Sprite6" type="Sprite" parent="blocks"]
+position = Vector2( 130, 384.211 )
+rotation = -0.523599
+texture = ExtResource( 5 )

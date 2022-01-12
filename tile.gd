@@ -1,4 +1,4 @@
-extends Node2D
+extends StaticBody2D
 
 signal clicked(tile)
 
@@ -77,8 +77,8 @@ func remove(piece_type):
 		'carrier': carrier,
 	}
 	var piece = pieces[piece_type]
-	piece.modulate = '#FFFFFF'
 	piece.visible = false
+	piece.modulate = '#FFFFFF'
 
 func _to_string():
 	return tile_name

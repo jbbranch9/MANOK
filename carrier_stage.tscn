@@ -11,10 +11,10 @@ position = Vector2( 40, 40 )
 tile_name = "stage_1"
 
 [node name="flare" parent="tile/flare" index="0"]
-frame = 7
+frame = 2
 
 [node name="flare2" parent="tile/flare" index="1"]
-frame = 7
+frame = 2
 
 [node name="carrier" parent="tile" index="3"]
 visible = true
@@ -24,10 +24,10 @@ position = Vector2( 120, 40 )
 tile_name = "stage_2"
 
 [node name="flare" parent="tile2/flare" index="0"]
-frame = 7
+frame = 2
 
 [node name="flare2" parent="tile2/flare" index="1"]
-frame = 7
+frame = 2
 
 [node name="carrier" parent="tile2" index="3"]
 visible = true
@@ -37,10 +37,10 @@ position = Vector2( 200, 40 )
 tile_name = "stage_3"
 
 [node name="flare" parent="tile3/flare" index="0"]
-frame = 6
+frame = 1
 
 [node name="flare2" parent="tile3/flare" index="1"]
-frame = 6
+frame = 1
 
 [node name="carrier" parent="tile3" index="3"]
 visible = true
