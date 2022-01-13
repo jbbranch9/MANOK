@@ -2,8 +2,8 @@
 
 [ext_resource path="res://board.gd" type="Script" id=1]
 [ext_resource path="res://tile.tscn" type="PackedScene" id=2]
-[ext_resource path="res://ASSETS/ref.png" type="Texture" id=3]
-[ext_resource path="res://ASSETS/1280x1280_background.png" type="Texture" id=4]
+[ext_resource path="res://reference/ref.png" type="Texture" id=3]
+[ext_resource path="res://ASSETS/board/1280x1280_background.png" type="Texture" id=4]
 [ext_resource path="res://ASSETS/board/block.png" type="Texture" id=5]
 [ext_resource path="res://ASSETS/board/arc.png" type="Texture" id=7]
 

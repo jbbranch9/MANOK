@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rings.svg-8aaa8e47fff0d196e19bad54d68ff64c.stex"
+path="res://.import/1280x1280_background.png-66e570e78149f70b1a8d8b7aba434e38.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://rings.svg"
-dest_files=[ "res://.import/rings.svg-8aaa8e47fff0d196e19bad54d68ff64c.stex" ]
+source_file="res://ASSETS/board/1280x1280_background.png"
+dest_files=[ "res://.import/1280x1280_background.png-66e570e78149f70b1a8d8b7aba434e38.stex" ]
 
 [params]
 

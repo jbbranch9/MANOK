@@ -1,0 +1,13 @@
+Files which should not be changed at all:
+
+zones.gd
+
+Files which should be considered add-only (no deletions or alterations):
+
+globals.gd
+
+Files scheduled for deprecation and/or deletion (no new dependencies):
+
+cursor.tscn
+cursor.gd
+
