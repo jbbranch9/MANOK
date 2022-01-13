@@ -2,7 +2,7 @@ Files which should not be changed at all:
 
 zones.gd
 
-Files which should be considered add-only (no deletions or alterations):
+Files which should be considered add-only (no deletions or non-debugging alterations):
 
 globals.gd
 
@@ -10,4 +10,5 @@ Files scheduled for deprecation and/or deletion (no new dependencies):
 
 cursor.tscn
 cursor.gd
-
+carrier_stage.gd
+carrier_stage.tscn

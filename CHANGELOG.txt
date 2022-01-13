@@ -1,5 +1,7 @@
-YYYY.MM.DD.TTTT - USERNAME - Notes.
+YYYY.MM.DD.TTTT - USERNAME - Changelog notes.
 
 2022.01.12.1107 - JBBRANCH9 - Granted public access to GitHub repository. Renamed some files, and began general code cleanup and documentation.
 
 2022.01.13.0303 - JBBRANCH9 - Replaced hex-style graphics with older ring-style ones. I agree that this is a better style for communicating piece movement, and is better suited to a point/click-and-drag interface. Next goal is finishing movement highlights, then movement animations.
+
+2022.01.13.1504 - JBBRANCH9 - Added match_color_to_player func at game.gd level (replaced a similar func in tile.gd which didn't account for custom player colors. This caused a crash bug that took about 12 hours to fix, but it's back up and running now.
