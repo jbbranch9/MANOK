@@ -9,6 +9,9 @@ var jumpables
 var slideables 
 var zone #outer, inner, or mid
 
+var board
+var game
+
 onready var flare = $flare
 
 onready var pawn = $pawn

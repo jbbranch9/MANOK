@@ -1,6 +1,7 @@
 extends Node2D
 
-onready var tiles = $board/tiles.get_children()
+
+onready var tiles = $board.tiles
 onready var selection = null
 
 var colors
@@ -10,7 +11,8 @@ func _ready():
 	
 	setup_pieces(3) #set up a 3-player game
 	
-
+	$board.game = self
+		
 
 func match_color_to_player(color:Color):
 	var player = null
