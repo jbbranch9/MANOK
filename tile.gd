@@ -11,6 +11,8 @@ var zone # outer, inner, or mid
 
 var gamestate
 
+var gamestate
+
 onready var flare = $flare
 
 onready var pawn = $pawn
@@ -39,6 +41,7 @@ func colorize():
 
 # returns basic data about this tiles current pieces
 func has():
+<<<<<<< Updated upstream
 	
 	var has_pawn = pawn.visible == true
 	var pawn_owner
@@ -46,6 +49,24 @@ func has():
 		pawn_owner = gamestate.match_color_to_player(pawn.modulate)
 	else:
 		pawn_owner = null
+=======
+	var has_pawn = pawn.visible == true
+	var has_carrier = carrier.visible == true
+
+	#get owner from color
+	var owners = {
+		Globals.PALETTE['player_colors']['A']: 'P1',
+		Globals.PALETTE['player_colors']['B']: 'P2',
+		Globals.PALETTE['player_colors']['C']: 'P3',
+	}
+	var pawn_owner = null
+	if has_pawn:
+		pawn_owner = gamestate.match_color_to_player(pawn.modulate)
+		
+	var carrier_owner = null
+	if has_carrier:
+		carrier_owner = gamestate.match_color_to_player(carrier.modulate)
+>>>>>>> Stashed changes
 	
 	var has_carrier = carrier.visible == true
 	var carrier_owner
@@ -60,7 +81,6 @@ func has():
 		'carrier': has_carrier,
 		'carrier_owner': carrier_owner,
 	}
-	
 	return output
 
 
