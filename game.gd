@@ -3,7 +3,7 @@ extends Node2D
 onready var tiles = $board/tiles.get_children()
 onready var selection = null
 
-
+var colors
 
 func _ready():
 	connect_signals()
@@ -12,13 +12,20 @@ func _ready():
 	
 
 
+func match_color_to_player(color:Color):
+	var player = null
+	if color in colors:
+		player = colors.find(color)+1
+		
+	return player
+
 func setup_pieces(player_count: int):
 	var config = Zones.CONFIGURATIONS['_'+str(player_count)+'_PLAYER']
 	var p1_color = Globals.PALETTE['player_colors']['A']
 	var p2_color = Globals.PALETTE['player_colors']['B']
 	var p3_color = Globals.PALETTE['player_colors']['C']
 	
-	var colors = [p1_color, p2_color]
+	colors = [p1_color, p2_color]
 	if player_count == 3:
 		colors.append(p3_color)
 	
