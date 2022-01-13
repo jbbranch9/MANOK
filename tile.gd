@@ -43,23 +43,22 @@ func has():
 	var has_pawn = pawn.visible == true
 	var has_carrier = carrier.visible == true
 
-	#get owner from color
-	var owners = {
-		Globals.PALETTE['player_colors']['A']: 'P1',
-		Globals.PALETTE['player_colors']['B']: 'P2',
-		Globals.PALETTE['player_colors']['C']: 'P3',
-	}
 	
 	var pawn_owner
 	if has_pawn:
-	 pawn_owner = owners[pawn.modulate]
-	else:
-		pawn_owner = null
+		pawn_owner = game.match_color_to_player(pawn.modulate)
+		
+	var carrier_owner
+	if has_carrier:
+		carrier_owner = game.match_color_to_player(carrier.modulate)
+		
+
 	
 	var output = {
 		'pawn': has_pawn,
 		'carrier': has_carrier,
 		'pawn_owner': pawn_owner,
+		'carrier_owner': carrier_owner,
 	}
 	
 	return output

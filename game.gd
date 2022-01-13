@@ -12,6 +12,7 @@ func _ready():
 	setup_pieces(3) #set up a 3-player game
 	
 	$board.game = self
+	$board.pass_game_reference_to_tiles()
 		
 
 func match_color_to_player(color:Color):
@@ -53,6 +54,7 @@ func carrier_pickup(just_activated):
 
 
 func tile_clicked(tile):
+	print(tile.has())
 	if $cursor.mode == "select":
 		if selection == null:
 			select(tile)
