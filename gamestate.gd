@@ -1,43 +1,26 @@
 extends Node2D
 
-onready var tiles = $board/tiles.get_children()
+
+onready var tiles = $board.tiles
 onready var selection = null
 
-<<<<<<< Updated upstream:gamestate.gd
-var colors = []
-
-=======
 var colors
->>>>>>> Stashed changes:game.gd
 
 func _ready():
 	connect_signals()
 	
 	setup_pieces(3) #set up a 3-player game
 	
-<<<<<<< Updated upstream:gamestate.gd
-	link_gamestate_to_tile()
-	
-func link_gamestate_to_tile():
-	for t in tiles:
-		t.gamestate = self
-=======
-	for t in tiles:
-		t.gamestate = self
-	
->>>>>>> Stashed changes:game.gd
+	$board.game = self
+	$board.pass_game_reference_to_tiles()
+		
 
 func match_color_to_player(color:Color):
 	var player = null
 	if color in colors:
-		player = colors.find(color) + 1
-<<<<<<< Updated upstream:gamestate.gd
-	return player
-=======
+		player = colors.find(color)+1
 		
 	return player
-		
->>>>>>> Stashed changes:game.gd
 
 func setup_pieces(player_count: int):
 	var config = Zones.CONFIGURATIONS['_'+str(player_count)+'_PLAYER']
@@ -71,12 +54,13 @@ func carrier_pickup(just_activated):
 
 
 func tile_clicked(tile):
+	print(tile.has())
 	if $cursor.mode == "select":
 		if selection == null:
 			select(tile)
 			$cursor.toggle_mode()
 		elif tile in selection.slides() or tile in selection.jumps():
-#			print(str(selection)+">>"+str(tile))
+			print(str(selection)+">>"+str(tile))
 			deselect()
 			$cursor.mode = "select1"
 	elif $cursor.mode == "jump":
