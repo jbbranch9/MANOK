@@ -1,3 +1,5 @@
+YYYY.MM.DD.TTTT - USERNAME - Notes.
+
 2022.01.12.1107 - JBBRANCH9 - Granted public access to GitHub repository. Renamed some files, and began general code cleanup and documentation.
 
 2022.01.13.0303 - JBBRANCH9 - Replaced hex-style graphics with older ring-style ones. I agree that this is a better style for communicating piece movement, and is better suited to a point/click-and-drag interface. Next goal is finishing movement highlights, then movement animations.
