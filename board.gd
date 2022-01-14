@@ -15,6 +15,7 @@ func _input(event):
 func get_tile(tile_ID):
 	return tile_container.get_node(tile_ID)
 
+# so each tile can reference the current game and board states
 func pass_game_reference_to_tiles():
 	for t in tiles:
 		t.game = game
