@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="MANOK"
-run/main_scene="res://gamestate.tscn"
+run/main_scene="res://game.tscn"
 
 [autoload]
 
