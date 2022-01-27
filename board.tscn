@@ -644,16 +644,6 @@ position = Vector2( 461.053, 542.105 )
 scale = Vector2( 1.1, 1.1 )
 tile_name = "L1"
 
-[node name="reference" type="Sprite" parent="."]
-visible = false
-position = Vector2( -4.40552, -7.61667 )
-scale = Vector2( 0.62, 0.6 )
-texture = ExtResource( 3 )
-centered = false
-__meta__ = {
-"_editor_description_": "	"
-}
-
 [node name="blocks" type="Node2D" parent="."]
 visible = false
 modulate = Color( 1, 0, 0, 1 )
@@ -687,3 +677,14 @@ texture = ExtResource( 5 )
 position = Vector2( 130, 384.211 )
 rotation = -0.523599
 texture = ExtResource( 5 )
+
+[node name="reference" type="Sprite" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.498039 )
+position = Vector2( -4.40552, -7.61667 )
+scale = Vector2( 0.62, 0.6 )
+texture = ExtResource( 3 )
+centered = false
+__meta__ = {
+"_editor_description_": "	"
+}
